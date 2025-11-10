@@ -53,6 +53,9 @@ endif()
 
 if(WIN32)
   add_compile_definitions(NOMINMAX)
+  if(MINGW)
+    add_link_options(-static-libstdc++ -lstdc++fs)
+  endif()
 endif()
 
 # Options
